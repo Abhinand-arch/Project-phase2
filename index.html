@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <nav>
+            <div class="nav-links">
+                <img src="./images/vecteezy_deer-head-logo_14038328.svg" alt="Logo" class="nav-logo" />
+                <a href="./About.html" class="nav-link">About</a>
+                <a href="./featuresmain.html" class="nav-link">Features</a>
+                <a href="./service.html" class="nav-link">Service</a>
+            </div>
+            <div class="nav-actions">
+                <a href="./contact.html" class="nav-link">Contact</a>
+                <select id="dropdown">
+                    <option>Register</option>
+                    <option>Login</option>
+                </select>
+            </div>
+        </nav>
+        <section class="hero">
+            <video class="bg-video" autoplay muted loop>
+                <source src="./images/Untitled design.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-content">
+                <h1>Welcome to Antler</h1>
+                <p>New gateway to cloud server management</p>
+            </div>
+        </section>
+        <section class="main-section">
+            <div class="box">
+                <div class="semicontainer">
+                    <!-- Left big cell (green) -->
+                    <div class="search-box">
+                        <input type="text" placeholder="happy-fox" />
+                        <button class="search-icon">🔍</button>
+                    </div>
+                    <div class="domain-main">happy-fox.com <span style="font-size:2rem;vertical-align:middle;">✔️</span></div>
+                    <div class="domain-alt faded">happy-fox.shop</div>
+                    <div class="domain-alt faded">happy-fox.store</div>
+                    <div class="domain-secured">✅ Domain Secured</div>
+                    <button class="cta-btn">Search Domains</button>
+                </div>
+                <div class="semicontainer2">
+                    <!-- Top right (beige) -->
+                    <h2 class="offer-title"> ₹ 1.00/1st year</h2>
+                    <div class="offer-details">
+                        Ensure your company and website stand out with a .co domain.<br>
+                        3-year purchase required. Additional year(s) ₹ 3,499.00.
+                    </div>
+                    <button class="cta-btn">Find Your Domain</button>
+                </div>
+                <div class="semicontainer3">
+                    <!-- Bottom right (light) -->
+                    <h2 class="soon-heading">More Plans Coming Soon</h2>
+                    <div class="soon-subtext">
+                        Stay tuned for exclusive deals on domains and hosting services.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <div class="box2">
+                <div class="box1">
+                    <h1 class="boxer">Starter plan</h1>
+                    <h1 class="boxer1">$50/mo</h1>
+                    <ul class="lister">
+                        <li>Bandwidth: 1 TB/month</li>
+                        <li>99.5% uptime</li>
+                        <li>Support: Email support</li>
+                        <li>Number of Servers: 1</li>
+                        <li>Weekly backups</li>
+                    </ul>
+                    <button id="btn1" type="submit">Purchase</button>
+                </div>
+                <div class="box2-inner">
+                    <h1 class="boxera">Basic plan</h1>
+                    <h1 class="boxer1a">$75/mo</h1>
+                    <ul class="lister">
+                        <li>3-5TB bandwidth</li>
+                        <li>99.99% uptime</li>
+                        <li>Priority 24/7 support</li>
+                        <li>Daily backups with restore</li>
+                        <li>Low network access</li>
+                    </ul>
+                    <button id="btn2" type="submit">Purchase</button>
+                </div>
+                <div class="box3">
+                    <h1 class="boxeram">Business plan</h1>
+                    <h1 class="boxer1am">$100/mo</h1>
+                    <ul class="lister">
+                        <li>Unlimited bandwidth</li>
+                        <li>99.99% uptime</li>
+                        <li>Priority 24/7 support</li>
+                        <li>Real-time backups</li>
+                        <li>unlimited Low network access</li>
+                    </ul>
+                    <button id="btn3" type="submit">Purchase</button>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            &copy; 2024 Antler. All rights reserved.
+            <div class="footer-buttons">
+                <button class="footer-btn">Contact</button>
+                <button class="footer-btn">Others</button>
+            </div>
+        </footer>
+        <script>
+            const cards = document.querySelectorAll(".semicontainer2, .semicontainer3");
+            for (let card of cards) {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-20px)";
+                    this.style.transition = "transform 0.2s";
+                });
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.transition = "transform 0.2s";
+                });
+            }
+            const cards1 = document.getElementsByClassName("semicontainer");
+            for (let card of cards1) {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-20px)";
+                    this.style.transition = "transform 0.2s";
+                });
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.transition = "transform 0.2s";
+                });
+            }
+            const cards4 = document.getElementsByClassName("box1");
+            for (let card of cards4) {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-20px)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
+                });
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "none";
+                });
+            }
+            const cards5 = document.getElementsByClassName("box2-inner");
+            for (let card of cards5) {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-20px)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
+                });
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "none";
+                });
+            }
+            const cards6 = document.getElementsByClassName("box3");
+            for (let card of cards6) {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-20px)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
+                });
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.transition = "transform 0.2s";
+                    this.style.boxShadow = "none";
+                });
+            }
+            const buttons = document.getElementsByClassName("footer-btn");
+            for (let btn of buttons) {
+                btn.addEventListener("click", function() {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    .hero {
+      background:#234040;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .about-section {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+      transition: background 0.3s ease;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .about-section p {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .about-image {
+      margin-top: 30px;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .about-section h2 { font-size: 1.5rem; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-in {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 1s ease-out;
+    }
+
+    .slide-show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>About Smart Adaptive Hosting</h1>
+    <p>Empowering Startups with Smarter, Low-Bandwidth Hosting Solutions</p>
+  </section>
+
+  <div class="container">
+    <div class="about-section">
+      <h2>Overview</h2>
+      <p>At Antler, we are redefining the future of web hosting by creating smart,
+      adaptive server solutions built for real-world connectivity challenges. Founded with a mission to empower startups and developers, our team focuses on delivering seamless digital experiences even in areas with poor or unstable internet networks.</p>
+      <p>Our flagship innovation, the Smart Adaptive Hosting Network, is designed to keep applications accessible 24/7, regardless of user bandwidth or connectivity limitations. By utilizing a cost-effective server cluster powered by repurposed Nvidia GPUs and Intel CPUs, we offer powerful yet affordable hosting infrastructure with built-in low-network fallback technology.</p>
+      <img src="project1.webp" alt="About Image" class="about-image slide-in">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-section">
+      <h2>Vision</h2>
+      <p>At Smart Adaptive Hosting, our vision is to transform the global digital experience by building an intelligent, inclusive, and resilient hosting infrastructure that adapts seamlessly to the user’s environment. We believe that internet access should never be a barrier to innovation or opportunity. Our goal is to create a world where every startup, developer, and end-user—regardless of geographic or network limitations—can access fast, reliable, and secure digital services.</p>
+      <p>Through our adaptive server technology and commitment to sustainability, we envision a future where performance and accessibility go hand in hand, powering a more equitable and connected digital ecosystem.</p>
+      <img src="project2.jpg" alt="Vision Image" class="about-image slide-in">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-section">
+      <h2>Our Mission</h2>
+      <p>At Smart Adaptive Hosting, we are redefining the future of web hosting with intelligent, low-network fallback technology. Our platform ensures uninterrupted app accessibility—even in poor or rural connectivity zones—making it ideal for startups aiming for mass reach.</p>
+      <p>We leverage repurposed Nvidia GPUs and Intel CPUs to build a sustainable, cost-effective hosting infrastructure. By automatically detecting low-bandwidth conditions and delivering lightweight versions of apps, we offer superior uptime and digital inclusion like no other hosting provider.</p>
+      <p>More than just a hosting company, we are a team driven by innovation, accessibility, and startup empowerment.</p>
+      <img src="project3.avif" alt="Team or Technology Image" class="about-image slide-in" />
+    </div>
+  </div>
+
+  <div class="side-animation"></div>
+  <div class="grid"></div>
+
+  <script>
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about-section').forEach(section => {
+      section.classList.add('hidden');
+      sectionObserver.observe(section);
+    });
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.slide-in').forEach(img => {
+      imageObserver.observe(img);
+    });
+  </script>
+</body>
+</html>
